@@ -21,19 +21,30 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="retro backgruond03" translatesAutoresizingMaskIntoConstraints="NO" id="lqW-Mh-VUE" userLabel="retrobg">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TAPPER" translatesAutoresizingMaskIntoConstraints="NO" id="3Lc-nc-hrM" userLabel="logo">
-                                <rect key="frame" x="142" y="60" width="316" height="70"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TAPPER" translatesAutoresizingMaskIntoConstraints="NO" id="3Lc-nc-hrM" userLabel="logo">
+                                <rect key="frame" x="154" y="60" width="293" height="64"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="7Sf-Dm-6qH"/>
                                     <constraint firstAttribute="height" constant="70" id="HbO-uh-BZu"/>
                                     <constraint firstAttribute="width" constant="316" id="bBt-B7-r4t"/>
+                                    <constraint firstAttribute="width" constant="293" id="lyW-CV-xat"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HbO-uh-BZu"/>
+                                        <exclude reference="bBt-B7-r4t"/>
+                                    </mask>
+                                </variation>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K97-Y7-zrx" userLabel="PlayBtn">
-                                <rect key="frame" x="183" y="450" width="234" height="90"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K97-Y7-zrx" userLabel="PlayBtn">
+                                <rect key="frame" x="210" y="450" width="180" height="90"/>
                                 <state key="normal" image="Play"/>
+                                <connections>
+                                    <action selector="onPlayBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k5f-24-aFr"/>
+                                </connections>
                             </button>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="How many taps to win ?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tyJ-7u-or8" userLabel="tapsTxt">
-                                <rect key="frame" x="142" y="363" width="309" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="How many taps to win ?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tyJ-7u-or8" userLabel="tapsTxt">
+                                <rect key="frame" x="145" y="348" width="310" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="0pu-pI-wk4"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="310" id="BXb-Zb-5qY"/>
@@ -47,16 +58,16 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVf-o3-i5v" userLabel="CoinBtn">
-                                <rect key="frame" x="229" y="93" width="138" height="145"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVf-o3-i5v" userLabel="CoinBtn">
+                                <rect key="frame" x="231" y="93" width="138" height="145"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="145" id="eBl-uq-LZw"/>
                                     <constraint firstAttribute="width" constant="138" id="vud-3B-ndu"/>
                                 </constraints>
                                 <state key="normal" image="Coin"/>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100 Taps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3B-0r-hbi" userLabel="TapsLabel">
-                                <rect key="frame" x="183" y="240" width="230" height="75"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 Taps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3B-0r-hbi" userLabel="TapsLabel">
+                                <rect key="frame" x="185" y="271" width="230" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="Nit-k3-esr"/>
                                     <constraint firstAttribute="width" constant="230" id="sgl-Vz-pFe"/>
@@ -94,6 +105,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="howManyTapsTxt" destination="tyJ-7u-or8" id="WrQ-gK-JHE"/>
+                        <outlet property="logoImage" destination="3Lc-nc-hrM" id="1yK-vM-zjj"/>
+                        <outlet property="playBtn" destination="K97-Y7-zrx" id="X9X-H4-pnk"/>
+                        <outlet property="tapBtn" destination="KVf-o3-i5v" id="jmo-Yi-VHs"/>
+                        <outlet property="tapsLabel" destination="M3B-0r-hbi" id="0GP-xj-AIi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
